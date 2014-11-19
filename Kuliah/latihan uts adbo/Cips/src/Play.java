@@ -3,6 +3,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
+import javax.swing.Timer;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +18,7 @@ import javax.swing.JFrame;
 public class Play extends javax.swing.JFrame implements ActionListener {
 
     World world;
+    Timer timer;
     /**
      * Creates new form Play
      */
@@ -25,6 +27,8 @@ public class Play extends javax.swing.JFrame implements ActionListener {
         getContentPane().add(world);
         pack();
         setVisible(true);
+        timer=new Timer(200, this);
+        timer.start();
         initComponents();
         
     }
