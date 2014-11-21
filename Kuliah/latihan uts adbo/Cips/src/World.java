@@ -31,7 +31,7 @@ public class World extends JPanel {
     public World() {
         dunia = new Object[10][10];
         player = new Player(2, 4);
-        this.res=true;
+        this.res=res;
         //d = new Dinding[5];
         //a = new Api[2];
         //b = new Barrier[1];
@@ -63,7 +63,7 @@ public class World extends JPanel {
                 }
             }
         }
-        g.drawImage(player.getPlayer(), player.getLocation().x * 60, player.getLocation().y * 60, this);
+        g.drawImage(player.getPlayer(), player.x * 60, player.y * 60, this);
 
     }
 
@@ -105,72 +105,53 @@ public class World extends JPanel {
 
     public boolean verifyMove(int n) {
         
-        int i = player.getLocation().x;
-        int j = player.getLocation().y;
-        int x, y;
+        int x= player.x;
+         int y=player.y;
+        res=true;
         if (n == 0) {
-            x = player.getLocation().x;
-            y = player.getLocation().y;
-            if (dunia[x][y] instanceof Lantai) {
+            if (dunia[player.x][player.y] instanceof Lantai) {
                 dunia[x][y] = player;
                 dunia[x][y + 1] = new Lantai(x, y);
 
-                this.res = true;
+                res =  true;
             } else if (dunia[x][y] instanceof Dinding) {
-                this.res = false;
+                res =  false;
             }
             
             
         } else if (n == 1) {
-            x = player.getLocation().x;
-            y = player.getLocation().y;
             if (dunia[x][y] instanceof Lantai) {
                 dunia[x][y] = player;
                 dunia[x][y - 1] = new Lantai(x, y);
-                this.res = true;
+                res =  true;
 
             } else if (dunia[x][y] instanceof Dinding) {
-                this.res = false;
+                res =  false;
             }
             
             
         } else if (n == 2) {
-            x = player.getLocation().x;
-            y = player.getLocation().y;
-            if (dunia[x][y] instanceof Lantai) {
+            if (dunia[player.x][player.y] instanceof Lantai) {
                 dunia[x][y] = player;
                 dunia[x + 1][y] = new Lantai(x, y);
-                this.res = true;
-            } else if (dunia[x][y] instanceof Dinding) {
-                this.res = false;
+                res =  true;
+            } else if (dunia[player.x-1][player.y] instanceof Dinding) {
+                res =  false;
             }
+            
         }
             else if (n == 3) {
-                System.out.println(this.res);
-                x = player.getLocation().x;
-            
-            y = player.getLocation().y;
-            if (dunia[x][y] instanceof Lantai) {
+            if (dunia[player.x][player.y] instanceof Lantai) {
                 dunia[x][y] = player;
                 dunia[x-1][y] = new Lantai(x, y);
-                this.res = true;
-            } else if (dunia[x][y] instanceof Dinding) {
-                this.res = false;
+                res =  true;
+            } else if (dunia[player.x+1][player.y] instanceof Dinding) {
+                res =  false;
             }
-    
 
-        } else {
-            x = player.getLocation().x;
-            y = player.getLocation().y;
-            if (dunia[x][y] instanceof Lantai) {
-                dunia[x][y] = player;
-                dunia[x][y - 1] = new Lantai(x, y);
-                this.res = true;
-            } else if (dunia[x][y] instanceof Dinding) {
-                this.res = false;
-            }
         }
-        return this.res;
+       return res;
+      
     }
 
     public boolean isRes() {
@@ -180,13 +161,18 @@ public class World extends JPanel {
     
     
     public void move(int n) {
-        if (this.res==true) {
-             player.move(n);
+        
+        if (verifyMove(n) != true) {
+            
+            
         }
-        else
+        else if(verifyMove(n) != false)
         {
-           
+           System.out.println(verifyMove(n));
+            verifyMove(n);
+            player.move(n);
+            
         }
-        System.out.println(player.getLocation().x + ", " + player.getLocation().y);
+        System.out.println(player.x + ", " + player.y);
     }
 }

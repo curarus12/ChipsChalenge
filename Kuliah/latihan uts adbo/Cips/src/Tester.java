@@ -1,6 +1,8 @@
 
-import java.util.Scanner;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,27 +13,14 @@ import javax.swing.JFrame;
 /**
  *
  * @author Yohan
- */
-public class Test {
-    
-    private World w;
-    
-    public Test(){
-        w=new World();
-    }
-    
-    public static void main(String[] args) {
-        Test c = new Test();
-        World x = new World();
-        Player p = new Player(2,2);
-        Scanner sc = new Scanner(System.in);
-
-        while (true) {
-            c.draw(x);
-            System.out.println("");
-            System.out.println("");
-            x.move(sc.nextInt());
-        }
+ *
+ * 
+ 
+ * w= new World();
+        JFrame j=new JFrame();
+        j.getContentPane().add(w);
+        j.pack();
+        j.setVisible(true);
     }
     
     public void draw(World x) {
@@ -63,5 +52,13 @@ public class Test {
 System.out.println(" ");
         
         }}
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        repaint();
+    }
     
+    public void play(){
+        
+    }
 }

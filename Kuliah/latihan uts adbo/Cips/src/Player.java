@@ -20,10 +20,11 @@ public class Player {
     public Lantai Lantai;
     private Image tiles;
     private  Point location;
+    public int x,y;
     
     public Player(int x,int y )
     {
-        location= new Point(x,y);
+       
     URL tile=getClass().getResource("/pikachu.png");
         if (tile==null)
         {
@@ -34,19 +35,17 @@ public class Player {
             tiles = Toolkit.getDefaultToolkit().getImage(tile);
         }
         chips=0;
+        this.x=x;
+        this.y=y;
     }
 
     public Image getPlayer() {
         return tiles;
     }
 
-    public Point getLocation() {
-        return location;
-    }
+   
 
-    public void setLocation(int x, int y) {
-        this.location = new Point(x,y);
-    }
+    
 
     
 
@@ -60,19 +59,19 @@ public class Player {
             {
                 if (n == 0)
                 {
-                    setLocation(this.getLocation().x, this.getLocation().y-1);
+                    this.y--;
                 }
                 else if(n==1)
                 {
-                    setLocation(this.getLocation().x, this.getLocation().y+1);
+                   this.y++;
                 }
                 else if(n==2)
                 {
-                  setLocation(this.getLocation().x-1, this.getLocation().y);
+                  this.x--;
                 }
                 else if(n==3)
                 {
-                    setLocation(this.getLocation().x+1, this.getLocation().y);
+                    this.x++;
                 }     
             }
     
