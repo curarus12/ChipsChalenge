@@ -16,6 +16,11 @@ import java.net.URL;
  */
 public class Air extends Lantai{
      private Image airs;
+     /**
+      * 
+      * @param x
+      * @param y 
+      */
     public Air(int x, int y)
     {
         super(x,y);
@@ -30,7 +35,10 @@ public class Air extends Lantai{
         }
       
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getAirs() {
         return airs;
     }

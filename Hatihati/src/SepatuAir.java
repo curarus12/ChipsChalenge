@@ -28,7 +28,10 @@ public class SepatuAir extends Lantai{
         }
 
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getSepatuAir() {
         return sepatuAir;
     }

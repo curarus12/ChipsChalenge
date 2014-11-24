@@ -27,7 +27,10 @@ public class Sepatuapi extends Lantai {
         }
 
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getSepatuApi() {
         return sepatuApi;
     }
