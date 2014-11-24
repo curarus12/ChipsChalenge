@@ -22,7 +22,7 @@ public class Api extends Lantai {
     {
         super(x,y);
         isKilling = false;
-        URL api=getClass().getResource("/apin.png");
+        URL api=getClass().getResource("/apin.jpg");
         if (api==null)
         {
             System.err.println("panas");
@@ -33,7 +33,10 @@ public class Api extends Lantai {
         }
       
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getApis() {
         return apis;
     }

@@ -25,7 +25,7 @@ public class Lantai {
     {
         this.x=x;
         this.y=y;
-      URL tile=getClass().getResource("/tile.jpg");
+      URL tile=getClass().getResource("/tiles.jpg");
         if (tile==null)
         {
             System.err.println("ga bisa napak");

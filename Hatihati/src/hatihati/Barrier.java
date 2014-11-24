@@ -34,20 +34,12 @@ public class Barrier extends Lantai{
         }
       
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getBarrier() {
         return barrier;
     }
     
-    public void destroyed(int playerChips,int worldChips)
-    {
-        if(playerChips == worldChips)
-        {
-            
-        }
-        else 
-        {
-            
-        }
-    }
 }

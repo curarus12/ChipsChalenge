@@ -27,7 +27,7 @@ public class Cips{
 
     public Cips(int x, int y)
     {
-        URL api=getClass().getResource("/Cips.png");
+        URL api=getClass().getResource("/Cips.jpg");
         if (api==null)
         {
             System.err.println("panas");
@@ -38,7 +38,10 @@ public class Cips{
         }
       
     }
-
+/**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
     public Image getCips() {
         return apis;
     }

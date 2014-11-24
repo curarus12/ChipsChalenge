@@ -19,7 +19,6 @@ public class World extends JPanel {
     int cips;
     int x, y;
     boolean res;
-    Key key;
     Lantai lantai;
     Dinding[] d;
     Api[] a;
@@ -43,7 +42,10 @@ public class World extends JPanel {
         assign();
 
     }
-
+/**
+ * untuk mengambar graphic
+ * @param g 
+ */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -80,12 +82,14 @@ public class World extends JPanel {
         g.drawImage(player.getPlayer(), player.getLocation().x * 60, player.getLocation().y * 60, this);
 
     }
-
+/**
+ * untuk meng assign koordinat setiap benda dan player, dan juga untuk menyimpan level
+ */
     public void assign() {
         if (this.i == 0) {
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
-                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)||(i== 0|| j == 0 )||(i== 3|| j == 3 )) {
+                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)&&(i== 0|| j == 0 )&&(i== 3|| j == 3 )) {
                         dunia[i][j] = new Dinding(i, j);
                     } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
                         dunia[i][j] = new Api(i, j);
@@ -150,7 +154,11 @@ public class World extends JPanel {
          *
          */
     }
-
+/**
+ * untuk menentukan apakah player dapat bergerak atau tidak jika true maka player boleh jalan jika false sebaliknya
+ * @param n
+ * @return 
+ */
     public boolean verifyMove(int n) {
 
         int i = player.getLocation().x;
@@ -330,11 +338,17 @@ public class World extends JPanel {
         }
         return this.res;
     }
-
+/**
+ * untuk mengembalikan this.res 
+ * @return 
+ */
     public boolean isRes() {
         return res;
     }
-
+/**
+ * untuk membuat player bergerak
+ * @param n 
+ */
     public void move(int n) {
 
         if (verifyMove(n) == true) {

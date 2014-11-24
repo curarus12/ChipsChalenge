@@ -17,14 +17,14 @@ import java.net.URL;
 public class Air extends Lantai{
      private Image airs;
      /**
-      * 
+      * x dan y adalah untuk koordinat di lantai
       * @param x
       * @param y 
       */
     public Air(int x, int y)
     {
         super(x,y);
-        URL air=getClass().getResource("/water.png");
+        URL air=getClass().getResource("/water.jpg");
         if (air==null)
         {
             System.err.println("panas");

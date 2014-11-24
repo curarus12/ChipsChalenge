@@ -35,15 +35,26 @@ public class Player {
         }
         chips=0;
     }
+        /**
+ * method ini untuk mengembilkan image atau gambar yang sudah diambil dari src
+ * @return 
+ */
 
     public Image getPlayer() {
         return tiles;
     }
-
+/**
+ * untuk mendapatkan lokasi player di tiles
+ * @return 
+ */
     public Point getLocation() {
         return location;
     }
-
+/**
+ * untuk mengeset posisi player di lantai
+ * @param x
+ * @param y 
+ */
     public void setLocation(int x, int y) {
         this.location = new Point(x,y);
     }
@@ -79,10 +90,7 @@ public class Player {
     /**
      * method mati jika player mati terkena rintangan
      */        
-            public void mati()
-            {
                 
-            }
 
     Image getTiles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

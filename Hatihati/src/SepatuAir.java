@@ -20,7 +20,7 @@ public class SepatuAir extends Lantai{
 
     public SepatuAir(int x, int y) {
         super(x, y);
-        URL sepatu = getClass().getResource("/SepatuAir.png");
+        URL sepatu = getClass().getResource("/SepatuAir.Jpg");
         if (sepatu == null) {
             System.err.println();
         } else {
