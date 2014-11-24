@@ -27,6 +27,7 @@ public class World extends JPanel {
     Cips cipss;
     boolean sepatuApi, sepatuAir;
     Graphics g;
+    int i;
 
     public World() {
         dunia = new Object[10][10];
@@ -38,8 +39,8 @@ public class World extends JPanel {
         //a = new Api[2];
         //b = new Barrier[1];
         this.cips = 0;
-        assignLevel0();
-        assignLevel1();
+        this.i = 0;
+        assign();
 
     }
 
@@ -80,54 +81,56 @@ public class World extends JPanel {
 
     }
 
-    public void assignLevel0() {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)) {
-                    dunia[i][j] = new Dinding(i, j);
-                } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
-                    dunia[i][j] = new Api(i, j);
-                } else if ((i == 9 && j == 4) || (i == 9 && j == 5) || (i == 9 && j == 6)) {
-                    dunia[i][j] = new Cips(i, j);
-                } else if (i == 9 && j == 8) {
-                    dunia[i][j] = new Barrier(i, j);
-                } else if (i == 5 && j == 5) {
-                    dunia[i][j] = new Sepatuapi(i, j);
-                } else if (i == 6 && j == 6 || i == 6 && j == 7 || i == 6 && j == 8) {
-                    dunia[i][j] = new Air(i, j);
-                } else if (i == 7 && j == 6) {
-                    dunia[i][j] = new SepatuAir(i, j);
+    public void assign() {
+        if (this.i == 0) {
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)) {
+                        dunia[i][j] = new Dinding(i, j);
+                    } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
+                        dunia[i][j] = new Api(i, j);
+                    } else if ((i == 9 && j == 4) || (i == 9 && j == 5) || (i == 9 && j == 6)) {
+                        dunia[i][j] = new Cips(i, j);
+                    } else if (i == 9 && j == 8) {
+                        dunia[i][j] = new Barrier(i, j);
+                    } else if (i == 5 && j == 5) {
+                        dunia[i][j] = new Sepatuapi(i, j);
+                    } else if (i == 6 && j == 6 || i == 6 && j == 7 || i == 6 && j == 8) {
+                        dunia[i][j] = new Air(i, j);
+                    } else if (i == 7 && j == 6) {
+                        dunia[i][j] = new SepatuAir(i, j);
 
-                } else {
-                    dunia[i][j] = new Lantai(i, j);
+                    } else {
+                        dunia[i][j] = new Lantai(i, j);
+                    }
+                }
+            }
+        } else if (this.i == 1) {
+
+            for (int i = 0; i < 10; i++) {
+                for (int j = 0; j < 10; j++) {
+                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)) {
+                        dunia[i][j] = new Dinding(i, j);
+                    } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
+                        dunia[i][j] = new Api(i, j);
+                    } else if ((i == 9 && j == 4) || (i == 7 && j == 5) || (i == 5 && j == 6)) {
+                        dunia[i][j] = new Cips(i, j);
+                    } else if (i == 9 && j == 8) {
+                        dunia[i][j] = new Barrier(i, j);
+                    } else if (i == 5 && j == 5) {
+                        dunia[i][j] = new Sepatuapi(i, j);
+                    } else if (i == 6 && j == 2 || i == 6 && j == 1 || i == 6 && j == 3) {
+                        dunia[i][j] = new Air(i, j);
+                    } else if (i == 7 && j == 9) {
+                        dunia[i][j] = new SepatuAir(i, j);
+
+                    } else {
+                        dunia[i][j] = new Lantai(i, j);
+                    }
                 }
             }
         }
-    }
         
-         public void assignLevel1() {
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)) {
-                    dunia[i][j] = new Dinding(i, j);
-                } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
-                    dunia[i][j] = new Api(i, j);
-                } else if ((i == 9 && j == 4) || (i == 7 && j == 5) || (i == 5 && j == 6)) {
-                    dunia[i][j] = new Cips(i, j);
-                } else if (i == 9 && j == 8) {
-                    dunia[i][j] = new Barrier(i, j);
-                } else if (i == 5 && j == 5) {
-                    dunia[i][j] = new Sepatuapi(i, j);
-                } else if (i == 6 && j == 2 || i == 6 && j == 1 || i == 6 && j == 3) {
-                    dunia[i][j] = new Air(i, j);
-                } else if (i == 7 && j == 9) {
-                    dunia[i][j] = new SepatuAir(i, j);
-
-                } else {
-                    dunia[i][j] = new Lantai(i, j);
-                }
-            }
-        }
         /**
          * this.d[0] = new Dinding(4, 4); this.d[1] = new Dinding(4, 3);
          * this.d[2] = new Dinding(4, 2); this.d[3] = new Dinding(1, 2);
@@ -165,6 +168,9 @@ public class World extends JPanel {
             } else if (dunia[x][y - 1] instanceof Barrier) {
                 if (this.cips == 3) {
                     this.res = true;
+                    this.i++;
+                    assign();
+                    this.cips=0;
                 } else {
                     this.res = false;
                 }
@@ -203,6 +209,9 @@ public class World extends JPanel {
 
                 if (this.cips == 3) {
                     this.res = true;
+                    this.i++;
+                    assign();
+                    this.cips=0;
                 } else {
                     this.res = false;
                 }
@@ -241,6 +250,9 @@ public class World extends JPanel {
             } else if (dunia[x - 1][y] instanceof Barrier) {
                 if (this.cips == 3) {
                     this.res = true;
+                    this.i++;
+                    assign();
+                    this.cips=0;
                 } else {
                     this.res = false;
                 }
@@ -279,6 +291,9 @@ public class World extends JPanel {
             } else if (dunia[x + 1][y] instanceof Barrier) {
                 if (this.cips == 3) {
                     this.res = true;
+                    this.i++;
+                    assign();
+                    this.cips=0;
                 } else {
                     this.res = false;
                 }
