@@ -85,7 +85,7 @@ public class World extends JPanel {
         if (this.i == 0) {
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {
-                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)) {
+                    if ((i == 4 && j == 4) || (i == 4 && j == 3) || (i == 4 && j == 2)||(i== 0|| j == 0 )||(i== 3|| j == 3 )) {
                         dunia[i][j] = new Dinding(i, j);
                     } else if ((i == 2 && j == 3) || (i == 1 && j == 1)) {
                         dunia[i][j] = new Api(i, j);
