@@ -130,7 +130,7 @@ public class World extends JPanel {
                 }
             }
         }
-        
+
         /**
          * this.d[0] = new Dinding(4, 4); this.d[1] = new Dinding(4, 3);
          * this.d[2] = new Dinding(4, 2); this.d[3] = new Dinding(1, 2);
@@ -170,7 +170,7 @@ public class World extends JPanel {
                     this.res = true;
                     this.i++;
                     assign();
-                    this.cips=0;
+                    this.cips = 0;
                 } else {
                     this.res = false;
                 }
@@ -211,7 +211,7 @@ public class World extends JPanel {
                     this.res = true;
                     this.i++;
                     assign();
-                    this.cips=0;
+                    this.cips = 0;
                 } else {
                     this.res = false;
                 }
@@ -252,7 +252,7 @@ public class World extends JPanel {
                     this.res = true;
                     this.i++;
                     assign();
-                    this.cips=0;
+                    this.cips = 0;
                 } else {
                     this.res = false;
                 }
@@ -293,7 +293,7 @@ public class World extends JPanel {
                     this.res = true;
                     this.i++;
                     assign();
-                    this.cips=0;
+                    this.cips = 0;
                 } else {
                     this.res = false;
                 }
@@ -307,10 +307,10 @@ public class World extends JPanel {
                     this.res = false;
                 }
             } else if (dunia[x][y] instanceof SepatuAir) {
-                this.sepatuApi = true;
+                this.sepatuAir = true;
                 dunia[x][y] = new Lantai(x, y);
             } else if (dunia[x][y] instanceof Air) {
-                if (this.sepatuApi == true) {
+                if (this.sepatuAir == true) {
                     this.res = true;
                 } else {
                     this.res = false;
